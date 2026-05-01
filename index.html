@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Comprobante</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<div id="formulario">
+  <h2>Generar comprobante</h2>
+
+  <input type="text" id="destino" placeholder="Nombre del destinatario">
+  <input type="text" id="cuenta" placeholder="Cuenta / Número">
+  <input type="number" id="monto" placeholder="Monto">
+  <input type="text" id="concepto" placeholder="Concepto">
+
+  <input type="datetime-local" id="fechaManual">
+
+  <select id="moneda">
+    <option value="$">USD ($)</option>
+    <option value="€">EUR (€)</option>
+    <option value="MX$">MXN (MX$)</option>
+    <option value="L">HNL (L)</option>
+  </select>
+
+  <button onclick="generar()">Generar</button>
+</div>
+
+<div id="resultado" class="hidden">
+
+  <div class="card">
+    <div class="check">✔</div>
+    <h1>Transferencia exitosa</h1>
+    <div class="monto" id="resMonto"></div>
+    <div class="fechaTop" id="resFecha"></div>
+  </div>
+
+  <div class="details">
+
+    <div class="row">
+      <span>Origen</span>
+      <span>Cuenta de Cheques</span>
+    </div>
+
+    <div class="row">
+      <span>Destino</span>
+      <span id="resDestino"></span>
+    </div>
+
+    <div class="row">
+      <span>Cuenta</span>
+      <span id="resCuenta"></span>
+    </div>
+
+    <div class="row">
+      <span>Comisión</span>
+      <span>0.00</span>
+    </div>
+
+    <div class="row">
+      <span>Concepto</span>
+      <span id="resConcepto"></span>
+    </div>
+
+    <div class="row">
+      <span>Tipo</span>
+      <span>Transferencia</span>
+    </div>
+
+    <div class="row">
+      <span>Folio</span>
+      <span id="folio"></span>
+    </div>
+
+    <div class="row">
+      <span>Fecha</span>
+      <span id="fecha"></span>
+    </div>
+
+  </div>
+
+  <button onclick="window.print()">Imprimir</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+      </html>
